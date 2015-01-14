@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib uri="http://jsptags.com/tags/navigation/pager" prefix="p"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TestAction</title>
+</head>
+<body>
+	<s:iterator value="businesses"  var="bus">
+		<s:property value="#bus.business_name"></s:property>
+	</s:iterator>
+	
+	<s:iterator value="pageCount" var="page">
+	<ul>
+		<li><a href="businessTest?pageNow=<s:property value="#page" />"><s:property value="#page"></s:property></a></li>
+	</ul>
+	</s:iterator>
+</body>
+</html>

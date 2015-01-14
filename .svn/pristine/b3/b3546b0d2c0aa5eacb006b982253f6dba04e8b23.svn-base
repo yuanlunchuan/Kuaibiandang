@@ -1,0 +1,15 @@
+package com.kuaibiandang.test;
+
+import com.kuaibiandang.DAO.DishDAO;
+import com.kuaibiandang.DAO.Impl.DishDAOImpl;
+import com.kuaibiandang.service.BusinessService;
+import com.kuaibiandang.service.Impl.BusinessServiceImpl;
+
+public class Tset {
+	
+	public static void main(String[] args) {
+		DishDAO d = new DishDAOImpl();
+		int t = d.getStatus("aSD");
+		System.out.println(t);
+	}
+}

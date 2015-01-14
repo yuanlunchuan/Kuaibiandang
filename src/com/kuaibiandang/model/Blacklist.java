@@ -1,0 +1,48 @@
+package com.kuaibiandang.model;
+
+import java.sql.Timestamp;
+
+public class Blacklist {
+
+	/*
+	 * 黑名单实体类
+	 */
+	private String blacklist_id;
+	private Timestamp blacklist_time;
+	private String blacklist_phonenumber;
+	
+	public Blacklist(){
+		
+	}
+	public Blacklist(String blacklist_id, Timestamp blacklist_time,
+			String blacklist_phonenumber) {
+		super();
+		this.blacklist_id = blacklist_id;
+		this.blacklist_time = blacklist_time;
+		this.blacklist_phonenumber = blacklist_phonenumber;
+	}
+
+	public String getBlacklist_id() {
+		return blacklist_id;
+	}
+
+	public void setBlacklist_id(String blacklist_id) {
+		this.blacklist_id = blacklist_id;
+	}
+
+	public Timestamp getBlacklist_time() {
+		return blacklist_time;
+	}
+
+	public void setBlacklist_time(Timestamp blacklist_time) {
+		this.blacklist_time = blacklist_time;
+	}
+
+	public String getBlacklist_phonenumber() {
+		return blacklist_phonenumber;
+	}
+
+	public void setBlacklist_phonenumber(String blacklist_phonenumber) {
+		this.blacklist_phonenumber = blacklist_phonenumber;
+	}
+}

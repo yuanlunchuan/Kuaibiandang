@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="/struts-tags" prefix="s"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<s:debug></s:debug>
+	<table style="border:2px;border-style: solid;align:center">
+		<tr>
+			<th>商家名字</th>
+			<th>商家号码</th>
+			<th>商家地址</th>
+			<th>商家坐标</th>
+			<th>商家注册时间</th>
+			<th>商家类型</th>
+			<th>商家等级</th>
+			<th>商家好评率</th>
+		</tr>
+		
+		<s:iterator value="businesses" var="bus">
+		<tr>
+				<td><s:property value="#bus.business_name" /></td>
+				<td><s:property value="#bus.business_phonenumber" /></td>
+				<td><s:property value="#bus.business_address" /></td>
+				<td><s:property value="#bus.business_point" /></td>
+				<td><s:date name="#bus.business_registertime" format="yyyy-MM-dd" /></td>
+				<td><s:property value="#bus.business_style" /></td>
+				<td><s:property value="#bus.business_level" /></td>
+				<td><s:property value="#bus.business_reputation" /></td>
+		</tr>
+		</s:iterator>
+	</table>
+</body>
+</html>

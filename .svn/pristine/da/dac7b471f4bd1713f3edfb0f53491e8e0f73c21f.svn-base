@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<default-action-ref name="index" />
+
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+
+	</package>
+
+	<package name="admin" extends="default" namespace="/admin">
+
+		<action name="login" class="com.kuaibiandang.action.AdminAction" >
+			<result name="success">${request.contextPath}/WEB-INF/test.jsp</result>
+			<result name="error">${request.contextPath}/index.jsp</result>
+		</action>
+
+		<action name="actiontest" class="com.kuaibiandang.action.TagAction">
+			<result name="success">${request.contextPath}/WEB-INF/welcome.jsp</result>
+		</action>
+		
+		<action name="business" class="com.kuaibiandang.action.ListBusinessAction">
+			<result name="success">x/WEB-INF/html/seller-management/seller-members.jsp</result>
+		</action>
+		
+		<action name="businessTest" class="com.kuaibiandang.action.ListBusinessAction">
+			 <result>${request.contextPath}/WEB-INF/html/seller-management/new.jsp</result>
+		</action>
+	</package>
+
+</struts>

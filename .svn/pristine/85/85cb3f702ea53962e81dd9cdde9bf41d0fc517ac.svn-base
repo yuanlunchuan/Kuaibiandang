@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <!-- Title and other stuffs -->
+  <title>快便当后台管理系统商家财务financial</title>
+
+  <!-- Bootstrap responsive -->
+  <link href="../../style/bootstrap-responsive.css" rel="stylesheet">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="../../style/font-awesome.css">
+  
+  <link rel="stylesheet" type="text/css" href="../../style/financial-management/financial-management-business_basic.css" />
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/favicon/favicon.png">
+</head>
+
+
+
+<body>
+	<!-- Main content starts -->
+    <div class="content">
+        <div class="hometop">                                       
+            <div class="hometitle">
+            <h3><a href="#">快便当</a>&nbsp;<span><i class="icon-chevron-right"></i></span>&nbsp;财务管理&nbsp;<span><i class="icon-chevron-right"></i></span>&nbsp;商家财务</h3>
+            </div>
+        </div>
+        
+        <!-- Main main starts -->
+        <div class="business">               
+            <div class="business-title">
+            	<ul>
+                	<li><a href="business-financial-service.html" target='service'><h3>基本服务费</h3></a>                   
+                    <li><a href="business-financial-ad.html" target='service'><h3>广告费</h3></a>
+                   <li><a href="business-financial-members.html" target='service'><h3>会员费</h3></a></li>
+                </ul>
+            </div>
+                        
+            <div class="business-main">            
+            
+            	<div>
+                    <iframe src="business-financial-service.html" name="service" scrolling="yes" width="100%" height="550px" frameborder="no" border="0" marginwidth="0" marginheight="0" >
+                        <p></p>
+                    </iframe>
+                </div>  
+                
+           </div>
+        </div>
+        <!-- Main main ends -->
+        
+    </div>
+<!-- Main content ends -->
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+package com.kuaibiandang.DAO;
+
+import java.util.List;
+
+import com.kuaibiandang.model.Sender;
+
+
+public interface SenderDAO {
+	
+	/**
+	 * 增加一个送餐员,状态为未审核
+	 * <b>添加一个sender之前需要查询数据库中有无相同手机号的用户包括黑名单</b>
+	 * @param 一个Sender对象
+	 * @return 添加成功返回true，失败返回false
+	 */
+	public boolean addSender(Sender sender);
+	
+	/**
+	 * 根据电话号码删除送餐员
+	 * @return 删除成功返回true，失败返回false
+	 */
+	public boolean deleteSenderByPhonenumber(String sender_phonenumber);
+	
+	/**
+	 * 根据ID删除送餐员
+	 * @return 删除成功返回true，失败返回false
+	 */
+	public boolean deleteSenderByID(String sender_id);
+	
+	
+	/**
+	 * 根据手机号更改送餐员状态
+	 * @return 更新成功返回true，更新返回false
+	 */
+	public boolean updateSenderStatus(String sender_phonenumber,int status);
+	
+	/**
+	 * 根据ID修改送餐员手机号码
+	 * @return 更新成功返回true，更新返回false
+	 */
+	public boolean updateSenderPhonenumberByID(String sender_id,String sender_phonenumber);
+	
+	/**
+	 * 根据手机号查询送餐员
+	 * @return 返回Sender对象
+	 */
+	public Sender getSenderByPhonenumber(String sender_phonenumber);
+	
+	/**
+	 * 根据ID查询送餐员信息
+	 * @param sender的ID
+	 * @return Sender对象
+	 */
+	public Sender getSenderByID(String sender_id);
+	
+	/**
+	 * 查询得到全部的送餐员
+	 */
+	public List<Sender> getAll();
+	
+	/**
+	 * 查询特定状态的送餐员
+	 */
+	public List<Sender> getAllByStatus(int sender_status,int start ,int num);
+	
+	/**
+	 * 通过查询手机号是否有相同的记录
+	 * @return 返回true表示有
+	 */
+	public boolean hasSender(String sender_phonenumber);
+	
+	/**
+	 * 登陆查询
+	 * <b>在业务逻辑层应该先查询黑名单</b>
+	 */
+	public Sender check(String sender_phonenumber,String password);
+	
+	/**
+	 * 更改密码
+	 * @param sender_id 送餐员ID 
+	 * @param password 新密码
+	 * @return
+	 */
+	public boolean updatePass(String sender_id,String password);
+	
+	/**
+	 * 更新送餐员速度
+	 * @param sender_id 送餐员ID
+	 * @param speed 速度
+	 * @return
+	 */
+	public boolean updateSpeed (String sender_id,int speed);
+	
+	/**
+	 * 更新应得报酬和全部已得报酬
+	 * @param sender_id
+	 * @param get
+	 * @param sum
+	 * @return
+	 */
+	public boolean updateGetSum(String sender_id,float get,float sum);
+	
+	/**
+	 * 根据状态查询送餐员的总数
+	 * @return
+	 */
+	public long getCount(int status);
+	
+	/**
+	 * 通过ID修改送餐员状态
+	 * @return
+	 */
+	public boolean updateSenderStatusByID(String sender_id,int status);
+}

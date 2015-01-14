@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*.s-content{
+	font-size:13px;
+	}
+.s-content span{
+	font-size:14px;
+	}
+	
+
+.admin{
+	display:block;
+	float:right;}
+	
+.s-widget{
+	margin-top:15px;
+	}
+
+.topcolor{
+	background:url(img/b-sidebar-back.png);
+	}*/
+
+.hometitle span{
+	font-size:14px;
+	}	
+.content{
+	color:#000;
+	background:#FFF;
+	height:620px;
+	width:100%;
+	display:block;
+	float:right;
+	}
+.content a{
+	color:#C00;
+	text-decoration:none;}
+.hometop{
+	margin-top:10px;
+	margin-left:15px;
+	}
+.homelogo{
+	display:block;
+	float:left;
+	}
+.hometitle{
+	display:block;
+	}
+.homemain{
+	text-align:center;
+	margin-top:170px;
+	}
+
+	
+

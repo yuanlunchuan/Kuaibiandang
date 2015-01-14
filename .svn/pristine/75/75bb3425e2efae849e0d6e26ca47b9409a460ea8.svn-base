@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数据报表</title>
+    <link href="../../style/bootstrap-responsive.css" rel="stylesheet">
+    <script src="../../js/Echarts/esl/esl.js"></script>
+    <link rel="stylesheet" href="../../style/bootstrap.css">
+    <link rel="stylesheet" href="../../style/basic.css">
+    <link rel="stylesheet" href="../../style/seller-management/seller-management.css">
+</head>
+<body>
+<div class="content">
+    <div class="bread-title">
+        <ol class="breadcrumb">
+            <li><a href="#">快便当</a></li>
+            <li><a href="#">商家管理</a></li>
+            <li class="active">数据报表</li>
+        </ol>
+    </div>
+    <div class="charts">
+        <div class="sell-chart">
+            <!--标题-->
+            <div class="widget-title">
+                <span>活跃情况</span>
+            </div>
+            <!--表格-->
+            <div id="pie"></div>
+
+        </div>
+
+        <div class="lastest">
+            <div class="widget-title">
+                <span>实时订单</span>
+            </div>
+
+            <div id="lastest-order"></div>
+        </div>
+
+        <div class="compare-chart">
+            <div class="widget-title">
+                <span>两周订单金额对比</span>
+            </div>
+            <div id="twoweeks"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../js/Echarts/rose.js"></script>
+<script type="text/javascript" src="../../js/Echarts/twoweeks-compare.js"></script>
+<script type="text/javascript" src="../../js/Echarts/lastest.js"></script>
+<script type="text/javascript">var timeTicket;</script>
+</body>
+</html>

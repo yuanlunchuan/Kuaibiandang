@@ -1,0 +1,36 @@
+package com.kuaibiandang.test;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.kuaibiandang.tools.DBUtils;
+
+public class DBTEst {
+	public static void main(String[] args) {
+		Connection conn = DBUtils.getConn();
+		PreparedStatement pstmt = null;
+		ResultSet result =null;
+		String SQL ="select * from users";
+		try {
+			pstmt =conn.prepareStatement(SQL);
+			result = pstmt.executeQuery();
+			if(result.next()){
+				System.out.println(11);
+				System.out.println(result.getString("user_id"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				result.close();
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

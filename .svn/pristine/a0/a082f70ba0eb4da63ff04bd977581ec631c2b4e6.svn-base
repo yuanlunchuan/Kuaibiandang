@@ -1,0 +1,33 @@
+.widget-title {
+    background: none repeat scroll 0 0 #404040;
+    /*background:#404040;*/
+    height: 30px;
+
+    margin: 0 auto;
+}
+.breadcrumb{
+    margin-bottom: 10px;
+}
+.widget-title span {
+    position: absolute;
+    margin-top: 5px;
+    height: 20px;
+    font-size: 14px;
+    display: inline;
+    color: #ffffff;
+}
+
+.sell-chart ,.compare-chart,.lastest{
+    width:98%;
+    border: 1px solid #000000;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pie,#twoweeks,#lastest-order{
+    height: 400px;
+    width: 70%;
+    margin: 0 auto;
+}
+

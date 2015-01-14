@@ -1,0 +1,32 @@
+package com.kuaibiandang.service.Impl;
+
+import java.util.List;
+
+import com.kuaibiandang.DAO.BlacklistDAO;
+import com.kuaibiandang.DAO.BusinessDAO;
+import com.kuaibiandang.DAO.Impl.BlacklistDAOImpl;
+import com.kuaibiandang.DAO.Impl.BusinessDAOImpl;
+import com.kuaibiandang.model.Business;
+import com.kuaibiandang.service.BusinessService;
+
+public class BusinessServiceImpl implements BusinessService{
+	
+	private BusinessDAO busDao = new BusinessDAOImpl();
+	private BlacklistDAO black = new BlacklistDAOImpl();
+	
+	@Override
+	public boolean check(String phonenumber, String password) {
+		return false;
+	}
+
+	@Override
+	public List<Business> getAll() {
+		return busDao.getAll();
+	}
+
+	@Override
+	public int getCount() {
+		return busDao.getCount();
+	}
+
+}

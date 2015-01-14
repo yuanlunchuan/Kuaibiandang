@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="/struts-tags" prefix="s"%>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>查看商家</title>
+    <link href="${pageContext.request.contextPath}/admin/style/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/style/font-awesome.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/style/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/style/bootstrap-original.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/style/basic.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/style/management-basic/m-basic.css">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/admin/img/favicon/favicon.png">
+</head>
+
+
+<body>
+<div class="content">
+<div class="bread-title">
+    <ol class="breadcrumb">
+        <li><a href="#">快便当</a></li>
+        <li><a href="#">商家管理</a></li>
+        <li class="active">查看商家</li>
+    </ol>
+</div>
+
+<div class="table-content">
+<div class="widget-title">
+    <span style="float: right" class="icon-search icon-white"></span>
+    <input type="text" class="form-control" placeholder="搜索商家">
+    <span class="black-title">查看商家</span>
+</div>
+
+<div class="main-table">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>商家编号</th>
+            <th>商家名</th>
+            <th>手机号码</th>
+            <th>菜品</th>
+            <th>默认送餐员</th>
+            <th>注册时间</th>
+            <th>注册信息</th>
+            <th>营业区域</th>
+            <th>营业时间</th>
+            <th>地址</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <s:iterator>
+        <tr>
+            <td>116</td>
+            <td><a href="seller-detail.html">六七八酒食 </a></td>
+            <td>13623457232</td>
+            <td>8/8</td>
+            <td><span class="label label-primary" style="font-size: 8px">平台提供</span></td>
+            <td>2014-7-1</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>成都龙泉驿区</td>
+            <td>每天11点到14点</td>
+            <td>十陵上街077号</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+        </s:iterator>
+        </tbody>
+
+        <!--分页-->
+    </table>
+    <div class="paging">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+</div>
+
+</div>
+</div>
+<script src="${pageContext.request.contextPath}/admin/js/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/admin/js/bootstrap.js"></script>
+</body>
+</html>

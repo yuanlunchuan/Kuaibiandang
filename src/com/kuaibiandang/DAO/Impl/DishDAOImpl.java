@@ -1,0 +1,194 @@
+package com.kuaibiandang.DAO.Impl;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.kuaibiandang.DAO.DishDAO;
+import com.kuaibiandang.model.Dish;
+import com.kuaibiandang.tools.DBUtils;
+
+public class DishDAOImpl implements DishDAO {
+	private QueryRunner runner = null;
+
+	public DishDAOImpl() {
+		runner = new QueryRunner(DBUtils.getDataSource());
+	}
+
+	@Override
+	public boolean BusinesshasIt(String dish_business_id, String dish_name) {
+		String SQL = "SELECT * FROM dishes where dish_business_id =? and dish_name = ?";
+		Dish dish = null;
+		try {
+			dish = runner.query(SQL, new BeanHandler<Dish>(Dish.class),
+					dish_business_id, dish_name);
+			if (dish == null) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean addDish(Dish dish) {
+		if (BusinesshasIt(dish.getDish_business_id(), dish.getDish_name())) {
+			return false; // 查询到一模一样的菜，就返回失败
+		}
+		String SQL = "INSERT INTO dishes values(?,?,?,?,?,?,?,?,?,?)";
+		int rowEffect = 0;
+
+		try {
+			rowEffect = runner.update(SQL, dish.getDish_id(),
+					dish.getDish_name(), dish.getDish_image_url(),
+					dish.getDish_price(), dish.getDish_status(),
+					dish.getDish_description(), dish.getDish_time(),
+					dish.getDish_style(), dish.getDish_discount(),
+					dish.getDish_business_id());
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteDish(String dish_id) {
+		String SQL = "DELETE FROM dishes where dish_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, dish_id);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateDishStatus(int status, String dish_id) {
+		String SQL = "UPDATE dishes SET dish_status = ? where dish_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, status, dish_id);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateDish(Dish dish) {
+		String SQL = "UPDATE dish SET dish_name = ?,dish_image_url = ?,dish_price = ?,dish_status =?,dish_description = ?,dish_time = ?,dish_style = ?,dish_discount = ? WHERE dish_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, dish.getDish_name(),
+					dish.getDish_image_url(), dish.getDish_price(),
+					dish.getDish_status(), dish.getDish_description(),
+					dish.getDish_time(), dish.getDish_style(),
+					dish.getDish_discount(), dish.getDish_id());
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public List<Dish> getAll(int start, int num) {
+		String SQL = "SELECT * FROM dishes LIMIT ?,?";
+		try {
+			return runner.query(SQL, new BeanListHandler<Dish>(Dish.class),
+					start, num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Dish> getByName(String dish_name, int start, int num) {
+		String SQL = "SELECT * FROM dishes where dish_name = ? LIMIT ?,?";
+		try {
+			return runner.query(SQL, new BeanListHandler<Dish>(Dish.class),
+					dish_name, start, num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Dish> getByNameMohu(String dish_name, int start, int num) {
+		String SQL = "SELECT * FROM dishes where dish_name like ? LIMIT ?,?";
+		String MOHU = "%" + dish_name + "%"; // 构造模糊查询语句
+		try {
+			return runner.query(SQL, new BeanListHandler<Dish>(Dish.class),
+					MOHU, start, num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Dish> getDishByBusiness(String dish_business_id,int status,int start,
+			int num) {
+		String SQL = "SELECT * FROM dishes where dish_business_id = ? and dish_status = ? LIMIT ?,?";
+		try {
+			return runner.query(SQL, new BeanListHandler<Dish>(Dish.class),
+					dish_business_id, status,start,num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public int getStatus(String dish_id) {
+		String SQL = "SELECT dish_status FROM dishes where dish_id = ?";
+		try {
+
+			return runner.query(SQL, new BeanHandler<Integer>(int.class),
+					dish_id);
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return -1;
+	}
+
+	@Override
+	public List<Dish> getDishBystatus(int status) {
+		String SQL = "SELECT * FROM dishes WHERE dish_status = ?";
+		try {
+			return runner.query(SQL, new BeanListHandler<Dish>(Dish.class),status);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

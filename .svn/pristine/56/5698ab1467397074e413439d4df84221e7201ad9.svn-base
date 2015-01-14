@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>送餐员审核</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet">
+    <link href="../../style/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../style/basic.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/management-basic/m-basic.css">
+    <link href="../../style/management-basic/server-basic.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../img/favicon/favicon.png">
+</head>
+<body>
+
+<div class="bread-title">
+    <ol class="breadcrumb">
+        <li><a href="#">快便当</a></li>
+        <li><a href="#">送餐员管理</a></li>
+        <li class="active">送餐员审核</li>
+    </ol>
+</div>
+<div class="content">
+    <div class="widget-title">
+        <span style="float: right" class="icon-search icon-white"></span>
+        <input type="text" class="form-control" placeholder="搜索送餐员">
+        <span class="black-title">待审核</span>
+    </div>
+    <div class="main-content">
+            <div class="avatar">
+                <img src="../../img/courier/hand-card1.jpg">
+            </div>
+
+            <div class="content_information">
+                <ul>
+                    <li>姓名：曹磊</li>
+                    <li>性别：男</li>
+                    <li>手机号码：13076294721</li>
+                    <li>注册信息：<a href="#">点击查看详情</a></li>
+                    <li>提交注册时间：2014-7-12</li>
+                </ul>
+            </div>
+            <div class="check_button">
+                <ul>
+                    <li>
+                        <button class="btn btn-success">审核通过</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-danger">审核失败</button>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <hr style="clear: both">
+
+    <div class="main-content">
+        <div class="avatar">
+            <img src="../../img/courier/hand-card2.jpg">
+        </div>
+
+        <div class="content_information">
+            <ul>
+                <li>姓名：白凯</li>
+                <li>性别：男</li>
+                <li>手机号码：18012352812</li>
+                <li>注册信息：<a href="#">点击查看详情</a></li>
+                <li>提交注册时间：2014-7-12</li>
+            </ul>
+        </div>
+        <div class="check_button">
+            <ul>
+                <li>
+                    <button class="btn btn-success">审核通过</button>
+                </li>
+                <li>
+                    <button class="btn btn-danger">审核失败</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr style="clear: both">
+
+    <div class="main-content">
+        <div class="avatar">
+            <img src="../../img/courier/hand-card3.jpg">
+        </div>
+
+        <div class="content_information">
+            <ul>
+                <li>姓名：包含露</li>
+                <li>性别：女</li>
+                <li>手机号码：18393728422</li>
+                <li>注册信息：<a href="#">点击查看详情</a></li>
+                <li>提交注册时间：2014-7-11</li>
+            </ul>
+        </div>
+        <div class="check_button">
+            <ul>
+                <li>
+                    <button class="btn btn-success">审核通过</button>
+                </li>
+                <li>
+                    <button class="btn btn-danger">审核失败</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr style="clear: both">
+
+    <div class="main-content">
+        <div class="avatar">
+            <img src="../../img/courier/hand-card4.jpg">
+        </div>
+
+        <div class="content_information">
+            <ul>
+                <li>姓名：鲍国栋</li>
+                <li>性别：男</li>
+                <li>手机号码：13587212352</li>
+                <li>注册信息：<a href="#">点击查看详情</a></li>
+                <li>提交注册时间：2014-7-11</li>
+            </ul>
+        </div>
+        <div class="check_button">
+            <ul>
+                <li>
+                    <button class="btn btn-success">审核通过</button>
+                </li>
+                <li>
+                    <button class="btn btn-danger">审核失败</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr style="clear: both">
+    <div class="paging">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+</body>
+</html>

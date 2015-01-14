@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- Title and other stuffs -->
+    <title>黑名单</title>
+
+    <!-- Bootstrap responsive -->
+    <link href="../../style/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Font awesome icon -->
+    <link rel="stylesheet" href="../../style/font-awesome.css">
+
+    <link rel="stylesheet" href="../../style/bootstrap.css">
+    <link rel="stylesheet" href="../../style/bootstrap-original.css">
+    <link rel="stylesheet" href="../../style/basic.css">
+    <link rel="stylesheet" href="../../style/management-basic/m-basic.css">
+    <!--<link rel="stylesheet" href="../../style/customer-management/customer-management.css">-->
+    <!-- HTML5 Support for IE -->
+    <!--[if lt IE 9]>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../img/favicon/favicon.png">
+</head>
+
+
+<body>
+<!-- Main content starts -->
+<div class="content">
+
+<div class="bread-title">
+    <ol class="breadcrumb">
+        <li><a href="#">快便当</a></li>
+        <li><a href="#">商家管理</a></li>
+        <li class="active">黑名单</li>
+    </ol>
+</div>
+
+
+<!--标题-->
+<div class="table-content">
+<div class="widget-title">
+    <span style="float: right" class="icon-search icon-white"></span>
+    <input type="text" class="form-control" placeholder="搜索用户">
+    <span class="black-title">黑名单</span>
+
+    <div class="filter">
+        <div class="province">
+            <span style="color: #808080">选择省市</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">省市</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">四川</a></li>
+                    <li><a href="#">浙江</a></li>
+                    <li><a href="#">上海</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">江苏</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="city">
+            <span style="color: #808080">选择城市</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">城市</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">成都</a></li>
+                    <li><a href="#">绵阳</a></li>
+                    <li><a href="#">南充</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">攀枝花</a></li>
+                    <li><a href="#">宜宾</a></li>
+                    <li><a href="#">广元</a></li>
+                    <li><a href="#">广安</a></li>
+                    <li><a href="#">巴中</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="district">
+            <span style="color: #808080">选择区域</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">区域</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">龙泉驿区</a></li>
+                    <li><a href="#">锦江区</a></li>
+                    <li><a href="#">青白江区</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">青羊区</a></li>
+                    <li><a href="#">金牛区</a></li>
+                    <li><a href="#">成华区</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="main-table">
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>商家编号</th>
+            <th>商家名</th>
+            <th>手机号码</th>
+            <th>封禁次数</th>
+            <th>封禁时间</th>
+            <th>地址</th>
+            <th>封禁理由</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>115</td>
+            <td><a href="seller-detail.html">孙午饭馆</a></td>
+            <td>13623457232</td>
+            <td>2</td>
+            <td>2014-7-10</td>
+            <td><p><a title="坐标（104.193209,30.653408）" rel="tooltip">成都龙泉驿区上街236号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">烧菜时间过长....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td>113</td>
+            <td><a href="seller-detail.html">秀色可餐</a></td>
+            <td>15326547892</td>
+            <td>2</td>
+            <td>2014-7-10</td>
+            <td><p><a title="坐标（104.02305,30.699065）" rel="tooltip">成都龙泉驿区上街142号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">多位用户举报....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td>146</td>
+            <td><a href="seller-detail.html">透明思考</a></td>
+            <td>13546987523</td>
+            <td>2</td>
+            <td>2014-7-10</td>
+            <td><p><a title="坐标（104.19173,30.658005）" rel="tooltip">成都龙泉驿区上街139号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">多位送餐员举报....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td>169</td>
+            <td><a href="seller-detail.html">大娘水饺</a></td>
+            <td>18215479631</td>
+            <td>2</td>
+            <td>2014-7-10</td>
+            <td><p><a title="坐标（104.193209,30.653408）" rel="tooltip">成都龙泉驿区上街045号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">烧菜时间过长....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>174</td>
+            <td><a href="seller-detail.html">巴山夜雨</a></td>
+            <td>13865478963</td>
+            <td>2</td>
+            <td>2014-7-9</td>
+            <td><p><a title="坐标（104.193209,30.653408）" rel="tooltip">成都龙泉驿区上街077号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">烧菜时间过长....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>185</td>
+            <td><a href="seller-detail.html">食全食美</a></td>
+            <td>18365478962</td>
+            <td>2</td>
+            <td>2014-7-9</td>
+            <td><p><a title="坐标（104.193527,30.653656）" rel="tooltip">成都龙泉驿区上街039号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">多位用户举报....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>212</td>
+            <td><a href="seller-detail.html">川国演义</a></td>
+            <td>18045796321</td>
+            <td>2</td>
+            <td>2014-7-9</td>
+            <td><p><a title="坐标（104.193209,30.653408）" rel="tooltip">成都龙泉驿区上街112号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">多位用户举报....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>182</td>
+            <td><a href="seller-detail.html">稻香村</a></td>
+            <td>13045789642</td>
+            <td>2</td>
+            <td>2014-7-9</td>
+            <td><p><a title="坐标（104.193209,30.653408）" rel="tooltip">成都龙泉驿区上街069号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">烧菜时间过长....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>027</td>
+            <td><a href="seller-detail.html">粥天粥地</a></td>
+            <td>15789645232</td>
+            <td>2</td>
+            <td>2014-7-9</td>
+            <td><p><a title="坐标（104.193209,30.653408）" rel="tooltip">成都龙泉驿区上街089号</a></p></td>
+            <td><p><a title="烧菜时间过长，多位用户多次举报" rel="tooltip">多位用户举报....</a></p></td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        </tbody>
+
+        <!--分页-->
+    </table>
+    <div class="paging">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+</div>
+
+</div>
+</div>
+<!-- Main content ends -->
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.js"></script>
+<script>
+    $("a[rel=tooltip]").tooltip();
+</script>
+</body>
+</html>

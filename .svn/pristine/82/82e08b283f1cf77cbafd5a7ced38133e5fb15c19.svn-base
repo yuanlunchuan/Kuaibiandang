@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	
+	<!-- <package name="default" namespace="/" extends="struts-default"> -->
+	<package name="default" extends="json-default">
+		<default-action-ref name="index" />
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		<!--获取验证码 -->
+		<action name="getyanzhengma" class="com.kuaibiandang.action.GetYanzhengmaAction"
+			method="againgetyanzhangme">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+
+		<!--重新获取验证码 -->
+		<action name="getyanzhengma" class="com.kuaibiandang.action.GetYanzhengmaAction"
+			method="getyanzhengma">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+
+		<!--测试struts2使用get和post方式访问struts2配置 -->
+		<action name="returnMag" class="com.kuaibiandang.action.ConsumerAction"
+			method="json">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+
+		<!--用户注册部分 -->
+		<action name="userRegister" class="com.kuaibiandang.action.ConsumerAction"
+			method="userRegister">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="admin" extends="default" namespace="/admin">
+		<action name="login" class="com.kuaibiandang.action.AdminAction">
+			<result name="success">${request.contextPath}/WEB-INF/new.jsp</result>
+			<result name="error">${request.contextPath}/index.jsp</result>
+		</action>
+	</package>
+
+</struts>

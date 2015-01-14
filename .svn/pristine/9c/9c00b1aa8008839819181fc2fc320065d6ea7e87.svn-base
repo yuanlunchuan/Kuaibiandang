@@ -1,0 +1,19 @@
+.content_information {
+    margin-top:0;
+    padding: 0;
+}
+.breadcrumb{
+       height: 20px;
+       margin-bottom: 10px;
+}
+
+.content {
+    margin-top: 0;
+}
+.avatar img {
+    height: 150px;
+    width: 200px;
+}
+.main-content {
+    width: 570px;
+}

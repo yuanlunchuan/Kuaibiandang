@@ -1,0 +1,32 @@
+package com.kuaibiandang.action;
+
+import java.util.List;
+
+import com.kuaibiandang.model.Business;
+import com.kuaibiandang.service.BusinessService;
+import com.kuaibiandang.service.Impl.BusinessServiceImpl;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ListBusinessAction extends ActionSupport {
+
+	/**
+	 * 显示全部的商家
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private List<Business> businesses;
+	BusinessService bs = new BusinessServiceImpl();
+
+	public List<Business> getBusinesses() {
+		return businesses;
+	}
+
+	public void setBusinesses(List<Business> businesses) {
+		this.businesses = businesses;
+	}
+
+	public String execute() {
+		businesses = bs.getAll();
+		return SUCCESS;
+	}
+}

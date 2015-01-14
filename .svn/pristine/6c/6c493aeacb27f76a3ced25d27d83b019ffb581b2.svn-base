@@ -1,0 +1,4 @@
+c3p0.driverClass=com.mysql.jdbc.Driver 
+c3p0.jdbcUrl=jdbc:mysql://180.84.33.125:3306/kuaibiandang
+c3p0.user=root
+c3p0.password=10515

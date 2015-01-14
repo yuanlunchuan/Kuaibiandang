@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>服务费设置</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet">
+    <link href="../../style/management-basic/server-basic.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../img/favicon/favicon.png">
+</head>
+<body>
+    <div class="content">
+        <div>服务费设置</div>
+        <div>服务费额度设置</div>
+        <div>服务费</div>
+    </div>
+<!--TODO-->
+</body>
+</html>

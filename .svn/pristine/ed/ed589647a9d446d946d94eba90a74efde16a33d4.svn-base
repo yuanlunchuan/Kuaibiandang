@@ -1,0 +1,103 @@
+package com.kuaibiandang.DAO.Impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import com.kuaibiandang.DAO.BlacklistDAO;
+import com.kuaibiandang.model.Blacklist;
+import com.kuaibiandang.tools.DBUtils;
+
+public class BlacklistDAOImpl implements BlacklistDAO {
+	
+	private QueryRunner runner = null;
+	public BlacklistDAOImpl(){
+		runner = new QueryRunner(DBUtils.getDataSource());
+	}
+	
+	@Override
+	public boolean addBlacklist(Blacklist black) {
+		String SQL = "INSERT INTO blacklist value+s(?,?,?)";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL,black.getBlacklist_id(),black.getBlacklist_time(),black.getBlacklist_phonenumber());
+			if(rowEffect>0){
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteBlacklist(String blacklist_phonenumber) {
+		String SQL = "DELETE FROM blacklist where blacklist_phonenumber =?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL,blacklist_phonenumber);
+			if(rowEffect >0){
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public List<Blacklist> getAll(int start,int num) {
+		String SQL = "SELECT * FROM blacklist LIMIT ?,?";
+		try {
+			return runner.query(SQL, new BeanListHandler<Blacklist>(Blacklist.class),start,num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean hasBlacklist(String phonenumber) {
+		Connection conn = DBUtils.getConn();
+		PreparedStatement pstmt = null;
+		ResultSet result = null;
+		String SQL = "SELECT * FROM blacklist where blacklist_phonenumber =?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString( 1, phonenumber);
+			result = pstmt.executeQuery();
+			if (result.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(result!=null){
+					result.close();
+				}
+				if(pstmt!=null){
+					pstmt.close();
+				}
+				if(conn!=null){
+					conn.close();
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return false;
+	}
+
+}

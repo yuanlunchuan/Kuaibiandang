@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link href="../../style/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../style/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/font-awesome.css">
+    <link rel="stylesheet" href="../../style/basic.css">
+    <link rel="stylesheet" href="../../style/customer-management/customer-detail.css">
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <link rel="shortcut icon" href="../../img/favicon/favicon.png">
+</head>
+<body>
+<div class="content">
+<div class="bread-title">
+    <ol class="breadcrumb">
+        <li><a href="#">快便当</a></li>
+        <li><a href="#">商家管理</a></li>
+        <li><a href="#">查看商家</a></li>
+        <li class="active">详细资料</li>
+    </ol>
+</div>
+
+<div class="detail-message">
+    <div class="avatar">
+        <img src="../../img/seller/seller_logo1.jpg"/>
+    </div>
+
+    <p>食尚中式快餐</p>
+
+    <p>手机号码：13934821342</p>
+
+    <p>注册时间:2014-4-21</p>
+
+    <p>营业时间：工作日11点到13点</p>
+
+    <p>注册信息：<a href="#">点此查看详情</a></p>
+
+    <p><a href="#"><div class="icon-user"></div>私信他</a></p>
+
+</div>
+
+<div class="order">
+    <div class="widget-title">
+        <span class="order-title">他的历史订单</span>
+        <span class="icon-search"></span>
+        <input type="text" class="form-control" style="float: right" placeholder="搜索订单">
+    </div>
+    <div class="order-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>送餐员</th>
+                <th>送餐员属性</th>
+                <th>下单时间</th>
+                <th>用户确认时间</th>
+                <th>份数</th>
+                <th>金额</th>
+                <th>支付送餐员</th>
+                <th>备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>IS17631</td>
+                <td>孙祈钒</td>
+                <td><div class="label label-success">平台提供</div></td>
+                <td>2014-7-1，12：30</td>
+                <td>2014-7-1，12：45</td>
+                <td>3</td>
+                <td>46元</td>
+                <td>6元</td>
+                <td><p><a title="辣椒少放点，还有就是不要折耳根" rel="tooltip">辣椒少放点...</a></p></td>
+
+            </tr>
+            <tr>
+                <td>IS11174</td>
+                <td>王社青</td>
+                <td><div class="label label-success">平台提供</div></td>
+                <td>2014-6-30，11：30</td>
+                <td>2014-6-30，11：55</td>
+                <td>6</td>
+                <td>80元</td>
+                <td>6元</td>
+                <td><p><a title="辣椒少放点，还有就是不要折耳根" rel="tooltip">辣椒少放点...</a></p></td>
+
+            </tr>
+            <tr>
+                <td>IS18463</td>
+                <td>张彦峰</td>
+                <td><div class="label label-success">平台提供</div></td>
+                <td>2014-6-30，17：23</td>
+                <td>2014-7-1，17：35</td>
+                <td>6</td>
+                <td>124元</td>
+                <td>10元</td>
+                <td><p><a title="辣椒少放点，还有就是不要折耳根" rel="tooltip">辣椒少放点...</a></p></td>
+
+            </tr>
+            <tr>
+                <td>IS16975</td>
+                <td>韩千叶</td>
+                <td><div class="label label-info">商家提供</div></td>
+                <td>2014-6-29，13：12</td>
+                <td>2014-6-29，13：30</td>
+                <td>4</td>
+                <td>58元</td>
+                <td>/</td>
+                <td><p><a title="辣椒少放点，还有就是不要折耳根" rel="tooltip">辣椒少放点...</a></p></td>
+            </tr>
+            </tbody>
+
+        </table>
+        <div class="paging">
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="order">
+    <div class="widget-title">
+        <span class="order-title">他的评价</span>
+        <span class="icon-search"></span>
+        <input type="text" class="form-control" style="float: right" placeholder="搜索">
+    </div>
+    <div class="order-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>评价对象</th>
+                <th>对象角色</th>
+                <th>评价分数</th>
+                <th>评价内容</th>
+                <th>评价时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>IS19631</td>
+                <td>胡成海</td>
+                <td>送餐员</td>
+                <td>4.0</td>
+                <td><p><a title="接到订单之后很快就到我这取货了" rel="tooltip">接到订单之后很快...</a></p></td>
+                <td>2014-7-1，18：20</td>
+            </tr>
+            <tr>
+                <td>IS17421</td>
+                <td>黄开明</td>
+                <td>送餐员</td>
+                <td>4.8</td>
+                <td><p><a title="接到订单之后很快就到我这取货了" rel="tooltip">接到订单之后很快...</a></p></td>
+                <td>2014-7-1，18：12</td>
+            </tr>
+            <tr>
+                <td>IS11256</td>
+                <td>江林</td>
+                <td>送餐员</td>
+                <td>4.0</td>
+                <td><p><a title="接到订单之后很快就到我这取货了" rel="tooltip">接到订单之后很快...</a></p></td>
+                <td>2014-7-1，12：45</td>
+            </tr>
+            <tr>
+                <td>IS13659</td>
+                <td>蒋彦</td>
+                <td>送餐员</td>
+                <td>5</td>
+                <td><p><a title="接到订单之后很快就到我这取货了" rel="tooltip">接到订单之后很快...</a></p></td>
+                <td>2014-7-1，11：23</td>
+            </tr>
+            </tbody>
+
+        </table>
+        <div class="paging">
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="order">
+    <div class="widget-title">
+        <span class="order-title">用户/送餐员对他的评价</span>
+        <span class="icon-search"></span>
+        <input type="text" class="form-control" style="float: right" placeholder="搜索">
+    </div>
+    <div class="order-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>评价对象</th>
+                <th>对象角色</th>
+                <th>评价分数</th>
+                <th>评价内容</th>
+                <th>评价时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>IS11512</td>
+                <td>蒋小波</td>
+                <td>送餐员</td>
+                <td>5</td>
+                <td><p><a title="商家时间安排合理，我很快取到了餐" rel="tooltip">商家时间安排合理.....</a></p></td>
+
+                <td>2014-7-1，20：12</td>
+            </tr>
+            <tr>
+                <td>IS18144</td>
+                <td>金明华</td>
+                <td>送餐员</td>
+                <td>5</td>
+                <td><p><a title="商家时间安排合理，我很快取到了餐" rel="tooltip">商家时间安排合理.....</a></p></td>
+
+                <td>2014-7-1，19：30</td>
+            </tr>
+            <tr>
+                <td>IS12612</td>
+                <td>靳银杰</td>
+                <td>送餐员</td>
+                <td>5</td>
+                <td><p><a title="商家时间安排合理，我很快取到了餐" rel="tooltip">商家时间安排合理.....</a></p></td>
+
+                <td>2014-7-1，19：26</td>
+            </tr>
+            <tr>
+                <td>IS14512</td>
+                <td>瞿大中</td>
+                <td>送餐员</td>
+                <td>5</td>
+                <td><p><a title="商家时间安排合理，我很快取到了餐" rel="tooltip">商家时间安排合理.....</a></p></td>
+
+                <td>2014-7-1，12：45</td>
+            </tr>
+            </tbody>
+
+        </table>
+        <div class="paging">
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    $("a[rel=tooltip]").tooltip();
+</script>
+</body>
+</html>

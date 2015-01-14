@@ -1,0 +1,118 @@
+package com.kuaibiandang.test;
+
+import static org.junit.Assert.*;
+
+import java.sql.Time;
+import java.sql.Timestamp;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.kuaibiandang.DAO.BusinessDAO;
+import com.kuaibiandang.DAO.Impl.BusinessDAOImpl;
+import com.kuaibiandang.model.Business;
+
+public class BusinessDAOTest {
+	BusinessDAO test = new BusinessDAOImpl();
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Test
+	public void test_Check() {
+		assertEquals(false, test.check("243", "345"));
+	}
+	
+	@Test
+	public void test_add(){
+		Business bus = new Business();
+		bus.setBusiness_id("131234");
+		bus.setBusiness_name("曹操外卖");
+		bus.setBusiness_password("sdfasd");
+		bus.setBusiness_phonenumber("1223324");
+		bus.setHost_name("123sdf");
+		bus.setBusiness_image_url("asd");
+		bus.setBusiness_address("asdasd");
+		bus.setBusiness_point("asd");
+		bus.setBusiness_registertime(new Timestamp(0));
+		bus.setBusiness_dish_id("12121");
+		bus.setBusiness_sender_id("154545");
+		bus.setBusiness_style(1);
+		bus.setBusiness_level(1);
+		bus.setBusiness_reputation(new Float(0));
+		bus.setBusiness_time(new Time(0));
+		bus.setBusiness_sender_cost(12);
+		bus.setBusiness_dish_discount("asdasd");
+		bus.setBusiness_guarantee(12312);
+		bus.setBusiness_status(1);
+		assertEquals(false,test.addBusiness(bus));
+	}
+	
+//	@Test
+//	public void test_Has_Blacklist() {
+//		assertEquals(true, test.Has_Blacklist("12345678910"));
+//	}
+	
+	@Test
+	public void test_getAll() {
+		Business bus = (Business) test.getAll().get(0);
+//		assertEquals("u12324234", bus.getBusiness_id());
+		assertEquals("曹操外卖", bus.getBusiness_name());
+	}
+	
+	@Test
+	public void test_findByPhonenumber() {
+		Business bus = test.findByPhonenumber("1223324");
+		assertEquals("131234",bus.getBusiness_id());
+	}
+	
+	@Test
+	public void test_deleteBusiness() {
+		assertEquals(false,test.deleteBusiness("56"));
+	}
+	
+	@Test
+	public void test_updateBusinessByPhonenumber() {
+		Business bus = new Business();
+		bus.setBusiness_id("131234");
+		bus.setBusiness_name("曹操外卖");
+		bus.setBusiness_password("sdfasd");
+		bus.setBusiness_phonenumber("1223324");
+		bus.setHost_name("123sdf");
+		bus.setBusiness_image_url("asd");
+		bus.setBusiness_address("asdasd");
+		bus.setBusiness_point("asd");
+		bus.setBusiness_registertime(new Timestamp(0));
+		bus.setBusiness_dish_id("12121");
+		bus.setBusiness_sender_id("154545");
+		bus.setBusiness_style(1);
+		bus.setBusiness_level(1);
+		bus.setBusiness_reputation(new Float(0));
+		bus.setBusiness_time(new Time(0));
+		bus.setBusiness_sender_cost(12);
+		bus.setBusiness_dish_discount("asdasd");
+		bus.setBusiness_guarantee(12312);
+		bus.setBusiness_status(2);
+		assertEquals(true,test.updateBusinessByPhonenumber(bus));
+	}
+	
+	@Test
+	public void test_findByID () {
+		Business bus =test.findByID("131234");
+		assertEquals("曹操外卖",bus.getBusiness_name());
+	}
+	
+	@Test
+	public void test_updateBusinessStatusByPhonenumber(){
+//		boolean t =test.updateBusinessStatusByPhonenumber("12312",9);
+//		System.out.println(t);
+	}
+	
+	
+}

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+	<!-- <package name="default" namespace="/" extends="struts-default"> -->
+	<package name="default" extends="json-default">
+		<default-action-ref name="index" />
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+		<!--获取验证码 -->
+		<action name="getyanzhengma" class="com.kuaibiandang.action.GetYanzhengmaAction"
+			method="againgetyanzhangme">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+
+		<!--重新获取验证码 -->
+		<action name="getyanzhengma" class="com.kuaibiandang.action.GetYanzhengmaAction"
+			method="getyanzhengma">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+
+		<!--测试struts2使用get和post方式访问struts2配置 -->
+		<action name="returnMag" class="com.kuaibiandang.action.ConsumerAction"
+			method="json">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+
+		<!--用户注册部分 -->
+		<action name="userRegister" class="com.kuaibiandang.action.ConsumerAction"
+			method="userRegister">
+			<result name="success" type="json">
+				<param name="includeProperties">message</param>
+			</result>
+		</action>
+
+
+	</package>
+
+	<!-- web后台管理Action -->
+	<package name="admin" extends="struts-default" namespace="/admin">
+		<global-results>
+			<result name="error">${request.contextPath}/error.jsp</result>
+		</global-results>
+		<action name="login" class="com.kuaibiandang.action.AdminAction">
+			<!-- <result name="success">${request.contextPath}/WEB-INF/admin.jsp</result> -->
+			<result name="error">${request.contextPath}/login.jsp</result>
+			<result type="chain" name="success">business</result>
+		</action>
+
+		<!--商家 -->
+		<!-- 查看商家 -->
+		<action name="business" class="com.kuaibiandang.action.BusinessAction">
+			<result name="success">
+				${request.contextPath}/WEB-INF/seller/seller-members.jsp
+			</result>
+
+			<result name="check">
+				${request.contextPath}/WEB-INF/seller/seller-check.jsp
+			</result>
+		</action>
+		<!--封禁 -->
+		<action name="addBlack" class="com.kuaibiandang.action.BusinessAction"
+			method="addBlack">
+			<result type="redirectAction" name="success">
+				business
+			</result>
+			<result name="error">
+				${request.contextPath}/login.jsp
+			</result>
+		</action>
+
+		<!--删除 -->
+		<action name="deleteBus" class="com.kuaibiandang.action.BusinessAction"
+			method="delete">
+			<result type="redirectAction" name="success">
+				business
+			</result>
+			<result name="error">
+				${request.contextPath}/login.jsp
+			</result>
+		</action>
+
+		<!--查看黑名单 -->
+		<action name="businessBlack" class="com.kuaibiandang.action.BlacklistAction">
+			<result name="success">${request.contextPath}/WEB-INF/seller/seller-black.jsp
+			</result>
+			<result name="error">
+				${request.contextPath}/login.jsp
+			</result>
+		</action>
+
+		<!--移除黑名单 -->
+		<action name="deleteBlack" class="com.kuaibiandang.action.BlacklistAction"
+			method="delete">
+			<result name="success_business" type="chain">
+				businessBlack
+			</result>
+			<result name="success_sender" type="chain">
+				senderBlack
+			</result>
+			<result name="success_user" type="chain">
+				userBlack
+			</result>
+			<result name="error">
+				${request.contextPath}/login.jsp
+			</result>
+		</action>
+
+		<!--审核菜品 -->
+		<action name="dishCheck" class="com.kuaibiandang.action.DishAction"
+			method="ListDishWei">
+			<result name="success">
+				${request.contextPath}/WEB-INF/seller/dish-check.jsp
+			</result>
+		</action>
+
+
+		<!--消费者 -->
+		<!--查看用户 -->
+		<action name="user" class="com.kuaibiandang.action.UserAction"
+			method="ListUser">
+			<result name="success">
+				${request.contextPath}/WEB-INF/user/user-members.jsp
+			</result>
+		</action>
+		<!--封禁用户 -->
+		<action name="addBlackUser" class="com.kuaibiandang.action.UserAction"
+			method="addBlack">
+			<result name="success" type="redirectAction">
+				user
+			</result>
+		</action>
+		<!--删除用户 -->
+		<action name="deleteUser" class="com.kuaibiandang.action.UserAction"
+			method="deleteUser">
+			<result name="success" type="redirectAction">
+				user
+			</result>
+		</action>
+		<action name="userBlack" class="com.kuaibiandang.action.BlacklistAction">
+			<param name="roleid">3</param>
+			<result name="success">
+				${request.contextPath}/WEB-INF/user/user-black.jsp
+			</result>
+		</action>
+
+		<action name="UserDetail" class="com.kuaibiandang.action.UserDetailAction">
+			<result name="success">
+				${request.contextPath}/WEB-INF/user/user-detail.jsp
+			</result>
+		</action>
+
+		<!--送餐员 -->
+		<!--查看送餐员 -->
+		<action name="sender" class="com.kuaibiandang.action.SenderAction"
+			method="ListSender">
+			<result name="success">
+				${request.contextPath}/WEB-INF/sender/sender-members.jsp
+			</result>
+			<result name="check">
+				${request.contextPath}/WEB-INF/sender/sender-check.jsp
+			</result>
+		</action>
+		<!--封禁 -->
+		<action name="addBlackSender" class="com.kuaibiandang.action.SenderAction"
+			method="addBlackSender">
+			<result name="success" type="redirectAction">
+				sender
+			</result>
+		</action>
+		<!--删除 -->
+		<action name="deleteSender" class="com.kuaibiandang.action.SenderAction"
+			method="deleteSender">
+			<result name="success" type="redirectAction">
+				sender
+			</result>
+		</action>
+		<!--查看黑名单 -->
+		<action name="senderBlack" class="com.kuaibiandang.action.BlacklistAction">
+			<param name="roleid">2</param>
+			<result name="success">
+				${request.contextPath}/WEB-INF/sender/sender-blacks.jsp
+			</result>
+		</action>
+		<!--查看详情 -->
+		<action name="SenderDetail" class="com.kuaibiandang.action.SenderDetailAction">
+			<result name="success">
+				${request.contextPath}/WEB-INF/sender/sender-detail.jsp
+			</result>
+		</action>
+		<!--审核通过 -->
+		<action name="senderCheck" class="com.kuaibiandang.action.SenderAction"
+			method="check">
+			<result name="success">
+				${request.contextPath}/WEB-INF/sender/sender-check.jsp
+			</result>
+		</action>
+		<action name="senderDischeck" class="com.kuaibiandang.action.SenderAction"
+			method="discheck">
+			<result name="success">
+				${request.contextPath}/WEB-INF/sender/sender-check.jsp
+			</result>
+		</action>
+
+		<action name="TODO" class="com.kuaibiandang.action.TODOAction">
+			<result name="success">
+				${request.contextPath}/WEB-INF/TODO.jsp
+			</result>
+		</action>
+	</package>
+</struts>

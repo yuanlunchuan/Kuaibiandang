@@ -1,0 +1,12 @@
+package com.kuaibiandang.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class OrderAction extends ActionSupport{
+
+	/**
+	 * 订单Action
+	 */
+	private static final long serialVersionUID = 1L;
+
+}

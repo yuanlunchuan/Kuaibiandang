@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.hometitle span{
+	font-size:14px;
+	}	
+.content{
+	color:#000;
+	background:#FFF;
+	height:530px;
+	width:100%;
+	display:block;
+	float:right;
+	}
+.content a{
+	color:#C00;
+	text-decoration:none;}
+
+.business-main{
+	margin-left:0%;
+	margin-right:0%;
+	}
+.business-main ul{
+	margin-top:-5px;
+	list-style-type:none;
+	}
+.business-main ul li{
+	float:left;
+	}
+.business_select_find{
+	margin-left:8.2%;
+	}
+.business_select_remind{
+	margin-left:8.2%;
+	}
+	
+/*分开选择区域和表格区域*/	
+.business_select_div{
+	padding-bottom:40px;
+	}	
+.business_table_service table{
+	margin-left:3.7%;
+	margin-right:3.7%;
+	width:93%;
+	}
+.business_table_service th{
+	background:#b4b4b4;
+	}
+.business_table_service tr:hover{
+	background:#b4b4b4;
+	}
+.business_table_service th, .business_table_service td{
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	}
+.business_table_service_page{
+	padding-left:3.7%;
+	}
+

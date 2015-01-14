@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.hometitle span{
+	font-size:14px;
+	color:#333;
+	}	
+.content{
+	color:#000;
+	background:#FFF;
+	height:620px;
+	width:100%;
+	display:block;
+	float:right;
+	}
+.content a{
+	color:#C00;
+	text-decoration:none;}
+.hometop{
+	margin-top:10px;
+	margin-left:2%;
+	}
+.homelogo{
+	display:block;
+	float:left;
+	}
+.hometitle{
+	display:block;
+	}
+.business-title{
+	background:#171717;
+	margin-left:2%;
+	margin-right:2%;
+	height:32px;
+	line-height:32px;
+	color:#FFF;	
+	padding-left:0px;
+	}
+.business-title ul{
+	list-style-type:none;
+	margin-left:-20px;
+	}
+.business-title ul li{
+	margin-top:-17px;
+	margin-left:20px;
+	text-align:center;
+	height:32px;
+	float:left;
+	background:url(img/financial-management/navbg-fgf.jpg) no-repeat right center;
+	}
+.business-title ul li a{
+	color:#FFF;
+	}
+.business-title ul li a:active{
+	color:#F00;
+	}
+.business-main{
+	margin-left:2%;
+	margin-right:2%;
+	}
+.business-main ul{
+	margin-top:-5px;
+	list-style-type:none;
+	}
+.business-main ul li{
+	float:left;
+	}
+.business_select_find{
+	margin-left:8%;
+	}
+.business_select_remind{
+	margin-left:8%;
+	}
+	
+/*分开选择区域和表格区域*/	
+.business_select_div{
+	padding-bottom:40px;
+	}	
+.business_table_service table{
+	margin-left:3.7%;
+	margin-right:3.7%;
+	width:93%;
+	}
+.business_table_service th{
+	background:#b4b4b4;
+	}
+.business_table_service tr:hover{
+	background:#b4b4b4;
+	}
+.business_table_service th, .business_table_service td{
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	}
+.business_table_service_page{
+	padding-left:3.7%;
+	}
+

@@ -1,0 +1,60 @@
+package com.kuaibiandang.test;
+
+import java.sql.Timestamp;
+import java.util.Iterator;
+import java.util.List;
+
+import com.kuaibiandang.DAO.BusinessDAO;
+import com.kuaibiandang.DAO.MessageDAO;
+import com.kuaibiandang.DAO.OrderDAO;
+import com.kuaibiandang.DAO.SenderDAO;
+import com.kuaibiandang.DAO.Impl.BusinessDAOImpl;
+import com.kuaibiandang.DAO.Impl.MessageDAOImpl;
+import com.kuaibiandang.DAO.Impl.OrderDAOImpl;
+import com.kuaibiandang.model.Sender;
+
+public class TestUpdate {
+	public static void main(String[] args) {
+		OrderDAO order = new OrderDAOImpl();
+		MessageDAO mess = new MessageDAOImpl();
+//		Sender sender = test.getSenderByID("asdf");
+//		System.out.println(sender.getSender_phonenumber());
+//		System.out.println(sender.getSender_registertime());
+//		
+//		List<Sender> senders = test.getAll();
+//		Iterator<Sender> iter = senders.iterator();
+//		while(iter.hasNext()){
+//			Sender s = iter.next();
+//			System.out.println(s.getSender_id());
+//		}
+//		Sender sender = new Sender();
+//		sender.setSender_id("12asd11");
+//		sender.setSender_name("哈哈645");
+//		sender.setSender_password("123");
+//		sender.setSender_identify("1234");
+//		sender.setSender_phonenumber("12334");
+//		sender.setSender_registertime(new Timestamp(0) );
+//		sender.setSender_seller_id("e12a");
+//		sender.setSender_speed(12);
+//		sender.setSender_level(123);
+//		sender.setSender_guarantee(12);
+//		sender.setSender_get(12);
+//		sender.setSender_sum(63);
+//		sender.setSender_status(1);
+//		sender.setSender_image_url("2354");
+//		System.out.println(test.addSender(sender));
+		
+//		int t = order.getStatus("asd54454");
+//		System.out.println(t);
+//		List<Timestamp> times = order.getTime("asd54454");
+//		System.out.println(times.size());
+//		System.out.println(times.get(0));
+//		Iterator<Timestamp> t = times.iterator();
+//		while(t.hasNext()){
+//			System.out.println(t);
+//		}
+		Object[] t =mess.getStatusRole("msd21");
+		System.out.println(t[0]);
+		System.out.println(t[1]);
+	}
+}

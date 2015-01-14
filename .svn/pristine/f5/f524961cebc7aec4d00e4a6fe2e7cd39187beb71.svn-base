@@ -1,0 +1,49 @@
+package com.kuaibiandang.action;
+
+import com.kuaibiandang.service.SenderService;
+import com.kuaibiandang.service.Impl.SenderServiceImpl;
+import com.kuaibiandang.tools.Pager;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SenderAction extends ActionSupport {
+
+	/**
+	 * 送餐员Action
+	 */
+	private static final long serialVersionUID = 1L;
+	SenderService ss = new SenderServiceImpl();
+	private int sender_status = 1; // 送餐员状态默认为1
+	private int pageNow = 1; //默认页数
+
+	private int pageSize = 10;
+	private int totalSize = (int) ss.getCount(sender_status);
+	private int totalPage = (totalSize % pageSize == 0) ? (totalSize / pageSize)
+			: (totalSize / pageSize + 1);
+
+	public int getSender_status() {
+		return sender_status;
+	}
+
+	public void setSender_status(int sender_status) {
+		this.sender_status = sender_status;
+	}
+
+	public int getPageNow() {
+		return pageNow;
+	}
+
+	public void setPageNow(int pageNow) {
+		this.pageNow = pageNow;
+	}
+
+
+	/**
+	 * 列出送餐员,status为页面传入数据
+	 * @return
+	 */
+	public String ListSender() {
+		Pager page = new Pager(pageNow,pageSize,totalSize);
+		ss.getAllByStatus(sender_status, page.getStart(), page.getTotalSize());
+		return SUCCESS;
+	}
+}

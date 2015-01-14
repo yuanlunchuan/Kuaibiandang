@@ -1,0 +1,33 @@
+package com.kuaibiandang.service.Impl;
+
+import java.util.List;
+
+import com.kuaibiandang.DAO.SenderDAO;
+import com.kuaibiandang.DAO.Impl.SenderDAOImpl;
+import com.kuaibiandang.model.Sender;
+import com.kuaibiandang.service.SenderService;
+
+public class SenderServiceImpl implements SenderService {
+	
+	private SenderDAO senderDao = new SenderDAOImpl();
+	@Override
+	public List<Sender> getAllByStatus(int status, int start, int num) {
+		return senderDao.getAllByStatus(status,start,num);
+	}
+
+	@Override
+	public boolean updateStatus(String sender_id, int status) {
+		return senderDao.updateSenderStatusByID(sender_id, status);
+	}
+
+	@Override
+	public boolean deleteSender(String sender_id) {
+		return senderDao.deleteSenderByID(sender_id);
+	}
+
+	@Override
+	public long getCount(int status) {
+		return senderDao.getCount(status);
+	}
+
+}

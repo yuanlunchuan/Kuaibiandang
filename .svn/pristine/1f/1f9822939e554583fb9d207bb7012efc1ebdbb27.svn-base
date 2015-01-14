@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>保证金设置</title>
+    <link href="../../style/bootstrap.css" rel="stylesheet">
+    <link href="../../style/management-basic/server-basic.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../../img/favicon/favicon.png">
+</head>
+<body>
+<!--TODO-->
+    <div class="content">
+        <div class="switch">
+            <span>保证金设置</span>
+        </div>
+    </div>
+</body>
+</html>

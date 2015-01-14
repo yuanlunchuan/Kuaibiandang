@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>查看送餐员</title>
+
+    <link href="../../style/bootstrap-responsive.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../style/font-awesome.css">
+
+    <link rel="stylesheet" href="../../style/bootstrap.css">
+    <link rel="stylesheet" href="../../style/bootstrap-original.css">
+    <link rel="stylesheet" href="../../style/basic.css">
+    <link rel="stylesheet" href="../../style/management-basic/m-basic.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../img/favicon/favicon.png">
+</head>
+
+
+<body>
+<!-- Main content starts -->
+<div class="content">
+
+<div class="bread-title">
+    <ol class="breadcrumb">
+        <li><a href="#">快便当</a></li>
+        <li><a href="#">送餐员管理</a></li>
+        <li class="active">查看送餐员</li>
+    </ol>
+</div>
+
+
+<!--标题-->
+<div class="table-content">
+<div class="widget-title">
+    <span style="float: right" class="icon-search icon-white"></span>
+    <input type="text" class="form-control" placeholder="搜索用户">
+    <span class="black-title">查看送餐员</span>
+
+    <div class="filter">
+        <div class="province">
+            <span style="color: #808080">选择省市</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">省市</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">四川</a></li>
+                    <li><a href="#">浙江</a></li>
+                    <li><a href="#">上海</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">江苏</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="city">
+            <span style="color: #808080">选择城市</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">城市</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">成都</a></li>
+                    <li><a href="#">绵阳</a></li>
+                    <li><a href="#">南充</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">攀枝花</a></li>
+                    <li><a href="#">宜宾</a></li>
+                    <li><a href="#">广元</a></li>
+                    <li><a href="#">广安</a></li>
+                    <li><a href="#">巴中</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="district">
+            <span style="color: #808080">选择区域</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">区域</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">龙泉驿区</a></li>
+                    <li><a href="#">锦江区</a></li>
+                    <li><a href="#">青白江区</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">青羊区</a></li>
+                    <li><a href="#">金牛区</a></li>
+                    <li><a href="#">成华区</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="main-table">
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>手机号码</th>
+            <th>身份证号码</th>
+            <th>状态</th>
+            <th>注册时间</th>
+            <th>注册信息</th>
+            <th>所属商家</th>
+            <th>保证金</th>
+            <th>活动区域</th>
+            <th>等级</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="courier-detail.html">蔡宏浩</a></td>
+            <td>男</td>
+            <td>13623457232</td>
+            <td>547136199656841236</td>
+            <td><span class="label label-success" style="font-size: 8px">在线</span></td>
+            <td>2014-7-6</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>2</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="courier-detail.html">陈泽乐</a></td>
+            <td>男</td>
+            <td>18963568453</td>
+            <td>569863199603214576</td>
+            <td><span class="label label-success" style="font-size: 8px">在线</span></td>
+            <td>2014-7-6</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>2</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="courier-detail.html">程志</a></td>
+            <td>男</td>
+            <td>18365487963</td>
+            <td>123321199301042132</td>
+            <td><span class="label label-default" style="font-size: 8px">离线</span></td>
+            <td>2014-7-6</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>1</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="courier-detail.html">崔小军</a></td>
+            <td>男</td>
+            <td>13212369745</td>
+            <td>326364199401045963</td>
+            <td><span class="label label-default" style="font-size: 8px">离线</span></td>
+            <td>2014-7-6</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>5</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="courier-detail.html">范信良</a></td>
+            <td>男</td>
+            <td>18145678941</td>
+            <td>312345198902083134</td>
+            <td><span class="label label-success" style="font-size: 8px">在线</span></td>
+            <td>2014-7-5</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>8</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="courier-detail.html">丁鹏</a></td>
+            <td>男</td>
+            <td>18045769634</td>
+            <td>4596321996032145624</td>
+            <td><span class="label label-success" style="font-size: 8px">在线</span></td>
+            <td>2014-7-5</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>5</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="courier-detail.html">付向东</a></td>
+            <td>男</td>
+            <td>13586974796</td>
+            <td>536478199512301245</td>
+            <td><span class="label label-success" style="font-size: 8px">在线</span></td>
+            <td>2014-7-4</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>4</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="courier-detail.html">高伟哲</a></td>
+            <td>男</td>
+            <td>15708479642</td>
+            <td>32132199401245632</td>
+            <td><span class="label label-success" style="font-size: 8px">在线</span></td>
+            <td>2014-7-4</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>5</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="courier-detail.html">龚斌</a></td>
+            <td>男</td>
+            <td>15786544863</td>
+            <td>553629199301045232</td>
+            <td><span class="label label-default" style="font-size: 8px">离线</span></td>
+            <td>2014-7-4</td>
+            <td><a href="#">点击查看详情</a></td>
+            <td>无</td>
+            <td>无</td>
+            <td>成都龙泉驿区</td>
+            <td>1</td>
+            <td>
+                <button class="btn btn-primary ">更新</button>
+                <button class="btn btn-danger">删除</button>
+                <button class="btn btn-warning">封禁</button>
+            </td>
+        </tr>
+        </tbody>
+
+        <!--分页-->
+    </table>
+    <div class="paging">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+</div>
+
+</div>
+</div>
+<!-- Main content ends -->
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.js"></script>
+</body>
+</html>

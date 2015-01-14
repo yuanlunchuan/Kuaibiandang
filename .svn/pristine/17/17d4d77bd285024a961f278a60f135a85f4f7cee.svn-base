@@ -1,0 +1,19 @@
+package com.kuaibiandang.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.kuaibiandang.service.BusinessService;
+import com.kuaibiandang.service.Impl.BusinessServiceImpl;
+
+public class Business {
+	private BusinessService bs = new BusinessServiceImpl();
+	@Test
+	public void test() {
+		int t = bs.getCount();
+		System.out.println(t);
+		assertEquals(t,3);
+	}
+
+}

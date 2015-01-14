@@ -1,0 +1,266 @@
+package com.kuaibiandang.DAO.Impl;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
+
+import com.kuaibiandang.DAO.BusinessDAO;
+import com.kuaibiandang.model.Business;
+import com.kuaibiandang.model.BusinessShow;
+import com.kuaibiandang.tools.DBUtils;
+
+public class BusinessDAOImpl implements BusinessDAO {
+
+	private QueryRunner runner = null;
+
+	public BusinessDAOImpl() {
+		runner = new QueryRunner(DBUtils.getDataSource());
+	}
+
+	@Override
+	public Business check(String phonenumber, String password) {
+		// 检查是否在黑名单的操作放在逻辑层，实现商家DAO和黑名单DAO的完全分离
+		String SQL = "SELECT * FROM businesses where business_phonenumber =? and business_password = ? and business_status = ?";
+		try {
+			return runner.query(SQL, new BeanHandler<Business>(Business.class),
+					phonenumber, password, 1);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return null;
+	}
+
+	@Override
+	public List<Business> getAll(int status, int start, int num) {
+		String SQL = "SELECT * FROM businesses WHERE business_status = ? LIMIT ?,?";
+		try {
+			return runner.query(SQL, new BeanListHandler<Business>(
+					Business.class), status, start, num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Business findByPhonenumber(String phonenumber) {
+		String SQL = "SELECT * FROM businesses where business_phonenumber =?";
+		try {
+			return runner.query(SQL, new BeanHandler<Business>(Business.class),
+					phonenumber);
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return null;
+	}
+
+	@Override
+	public boolean addBusiness(Business bus) {
+		if (findByPhonenumber(bus.getBusiness_phonenumber()) == null) {
+			String SQL = "INSERT INTO businesses values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			int rowEffect = 0;
+			try {
+				rowEffect = runner.update(SQL, bus.getBusiness_id(),
+						bus.getBusiness_name(), bus.getBusiness_password(),
+						bus.getBusiness_phonenumber(), bus.getHost_name(),
+						bus.getBusiness_image_url(), bus.getBusiness_address(),
+						bus.getBusiness_point(),
+						bus.getBusiness_registertime(),
+						bus.getBusiness_dish_id(), bus.getBusiness_sender_id(),
+						bus.getBusiness_style(), bus.getBusiness_level(),
+						bus.getBusiness_reputation(), bus.getBusiness_time(),
+						bus.getBusiness_sender_cost(),
+						bus.getBusiness_dish_discount(),
+						bus.getBusiness_guarantee(), bus.getBusiness_status());
+				if (rowEffect > 0) {
+					return true;
+				} else {
+					return false;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteBusiness(String phonenumber) {
+		String SQL = "DELETE FROM businesses where business_phonenumber = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, phonenumber);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	// 菜品信息去dish表中查，商家dish_id无需用到
+	public boolean updateBusinessByPhonenumber(Business bus) {
+		String SQL = "UPDATE businesses SET  business_name = ? ,business_phonenumber = ?, business_image_url = ?,business_address = ?,business_point = ?,business_sender_id = ?,business_style = ?,business_level = ?,business_reputation = ?,business_time = ?,business_sender_cost = ?,business_dish_discount = ?,business_guarantee = ?,business_status = ? where business_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, bus.getBusiness_name(),
+					bus.getBusiness_phonenumber(), bus.getBusiness_image_url(),
+					bus.getBusiness_address(), bus.getBusiness_point(),
+					bus.getBusiness_sender_id(), bus.getBusiness_style(),
+					bus.getBusiness_level(), bus.getBusiness_time(),
+					bus.getBusiness_sender_cost(),
+					bus.getBusiness_dish_discount(),
+					bus.getBusiness_guarantee(), bus.getBusiness_status(),
+					bus.getBusiness_id());
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public Business findByID(String ID) {
+		String SQL = "SELECT * FROM businesses where business_id =?";
+		try {
+			return runner.query(SQL, new BeanHandler<Business>(Business.class),ID);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean updateBusinessStatusByID(String business_id, int status) {
+		String SQL = "UPDATE  businesses SET business_status = ? where business_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, status, business_id);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateBussinessPass(String business_id, String password) {
+		String SQL = "UPDATE businesses SET business_password = ? WHERE business_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, password, business_id);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public List<BusinessShow> getShowBussiness(int status, int start, int num) {
+		String SQL = "SELECT business_name,business_image_url,business_address,business_point,business_reputation FROM businesses WHERE business_status = ? LIMIT ?,?";
+		try {
+			return runner.query(SQL, new BeanListHandler<BusinessShow>(
+					BusinessShow.class), status, start, num);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean updateBusinessReputation(String business_id, Float reputation) {
+		String SQL = "UPDATE businessse SET business_reputation = ? WHERE business_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, reputation, business_id);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateSenderCost(String business_id, int sender_cost) {
+		String SQL = "UPDATE businessse SET business_sender_cost = ? WHERE business_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, sender_cost, business_id);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateLevel(String business_id, int level) {
+		String SQL = "UPDATE businesses SET business_level = ? WHERE business_id = ?";
+		int rowEffect = 0;
+		try {
+			rowEffect = runner.update(SQL, level, business_id);
+			if (rowEffect > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public long getCount(int status) {
+		String SQL = "SELECT COUNT('business_id') FROM businesses WHERE business_status =?";
+		try {
+			return runner.query(SQL, new ScalarHandler<Long>(),status);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0L;
+	}
+
+	@Override
+	public int getStatus(String phonenumber) {
+		String SQL = "SELECT business_status FROM businesses WHERE  business_phonenumber = ?";
+		try {
+			return runner.query(SQL, new ScalarHandler<Integer>(), phonenumber);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+}

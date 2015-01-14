@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- Title and other stuffs -->
+    <title>黑名单</title>
+
+    <!-- Bootstrap responsive -->
+    <link href="../../style/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Font awesome icon -->
+    <link rel="stylesheet" href="../../style/font-awesome.css">
+
+    <link rel="stylesheet" href="../../style/bootstrap.css">
+    <link rel="stylesheet" href="../../style/bootstrap-original.css">
+    <link rel="stylesheet" href="../../style/basic.css">
+    <link rel="stylesheet" href="../../style/management-basic/m-basic.css">
+    <!--<link rel="stylesheet" href="../../style/customer-management/customer-management.css">-->
+    <!-- HTML5 Support for IE -->
+    <!--[if lt IE 9]>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../img/favicon/favicon.png">
+</head>
+
+
+<body>
+<!-- Main content starts -->
+<div class="content">
+
+<div class="bread-title">
+    <ol class="breadcrumb">
+        <li><a href="#">快便当</a></li>
+        <li><a href="#">用户管理</a></li>
+        <li class="active">查看用户</li>
+    </ol>
+</div>
+
+
+<!--标题-->
+<div class="table-content">
+<div class="widget-title">
+    <span style="float: right" class="icon-search icon-white"></span>
+    <input type="text" class="form-control" placeholder="搜索用户">
+    <span class="black-title">黑名单</span>
+
+    <div class="filter">
+        <div class="province">
+            <span style="color: #808080">选择省市</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">省市</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">四川</a></li>
+                    <li><a href="#">浙江</a></li>
+                    <li><a href="#">上海</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">江苏</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="city">
+            <span style="color: #808080">选择城市</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">城市</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">成都</a></li>
+                    <li><a href="#">绵阳</a></li>
+                    <li><a href="#">南充</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">攀枝花</a></li>
+                    <li><a href="#">宜宾</a></li>
+                    <li><a href="#">广元</a></li>
+                    <li><a href="#">广安</a></li>
+                    <li><a href="#">巴中</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="district">
+            <span style="color: #808080">选择区域</span>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default selector">区域</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">龙泉驿区</a></li>
+                    <li><a href="#">锦江区</a></li>
+                    <li><a href="#">青白江区</a></li>
+                    <!--<li class="divider"></li>-->
+                    <li><a href="#">青羊区</a></li>
+                    <li><a href="#">金牛区</a></li>
+                    <li><a href="#">成华区</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="main-table">
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>手机号码</th>
+            <th>性别</th>
+            <th>已封禁次数</th>
+            <th>封禁时间</th>
+            <th>登陆范围</th>
+            <th>最后登陆IP</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="customer-detail.html">user12331</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>1</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>180.84.33.253</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="customer-detail.html">LILIVID</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>3</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>202.153.124.114</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="customer-detail.html">xixi1234</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>1</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>180.84.33.14</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="customer-detail.html">depends2089</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>3</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>42.132.159.122</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="customer-detail.html">追风少年</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>1</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>58.214.124.114</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="customer-detail.html">太阳王子</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>2</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>180.84.39.122</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="customer-detail.html">最美的太阳苏u</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>1</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>180.84.33.206</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="customer-detail.html">smart176</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>1</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>180.84.33.115</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="customer-detail.html">user12562</a></td>
+            <td>13623457232</td>
+            <td>男</td>
+            <td>2</td>
+            <td>2014-7-18</td>
+            <th>成都龙泉驿区</th>
+            <td>180.84.33.253</td>
+            <td>
+                <button class="btn btn-warning">解除封禁</button>
+            </td>
+        </tr>
+        </tbody>
+
+        <!--分页-->
+    </table>
+    <div class="paging">
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+</div>
+
+</div>
+</div>
+<!-- Main content ends -->
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.js"></script>
+</body>
+</html>
