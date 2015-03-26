@@ -3,7 +3,7 @@ package com.kuaibiandang.DAO.Impl;
 import java.sql.SQLException;
 import java.util.List;
 
-import javafx.scene.control.Tab;
+//import javafx.scene.control.Tab;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -26,21 +26,15 @@ public class SenderDAOImpl implements SenderDAO {
 		String SQL = "INSERT INTO senders values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		int rowEffect = 0;
 		try {
-			rowEffect = runner.update(SQL, sender.getSender_id(),
-					sender.getSender_name(), sender.getSender_password(),
-					sender.getSender_identify(),
-					sender.getSender_phonenumber(),
-					sender.getSender_registertime(),
-					sender.getSender_seller_id(), sender.getSender_speed(),
-					sender.getSender_level(), sender.getSender_guarantee(),
-					sender.getSender_get(), sender.getSender_sum(),
-					sender.getSender_status(), sender.getSender_image_url());
+			rowEffect = runner.update(SQL, sender.getSender_id(), sender.getSender_name(), sender.getSender_password(), sender.getSender_identify(), sender.getSender_phonenumber(), sender.getSender_registertime(), sender.getSender_seller_id(), sender.getSender_speed(), sender.getSender_level(), sender.getSender_guarantee(), sender.getSender_get(), sender.getSender_sum(), sender.getSender_status(), sender.getSender_image_url());
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 
@@ -55,10 +49,12 @@ public class SenderDAOImpl implements SenderDAO {
 			rowEffect = runner.update(SQL, sender_phonenumber);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -72,10 +68,12 @@ public class SenderDAOImpl implements SenderDAO {
 			rowEffect = runner.update(SQL, sender_id);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -89,28 +87,31 @@ public class SenderDAOImpl implements SenderDAO {
 			rowEffect = runner.update(SQL, status, sender_phonenumber);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
 	}
 
 	@Override
-	public boolean updateSenderPhonenumberByID(String sender_id,
-			String sender_phonenumber) {
+	public boolean updateSenderPhonenumberByID(String sender_id, String sender_phonenumber) {
 		String SQL = "UPDATE senders SET sender_phonenumber = ? WHERE sender_id = ?";
 		int rowEffect = 0;
 		try {
 			rowEffect = runner.update(SQL, sender_phonenumber, sender_id);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -120,9 +121,9 @@ public class SenderDAOImpl implements SenderDAO {
 	public Sender getSenderByPhonenumber(String sender_phonenumber) {
 		String SQL = "SELECT * FROM senders WHERE sender_phonenumber = ?";
 		try {
-			return runner.query(SQL, new BeanHandler<Sender>(Sender.class),
-					sender_phonenumber);
-		} catch (SQLException e) {
+			return runner.query(SQL, new BeanHandler<Sender>(Sender.class), sender_phonenumber);
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -132,9 +133,9 @@ public class SenderDAOImpl implements SenderDAO {
 	public Sender getSenderByID(String sender_id) {
 		String SQL = "SELECT * FROM senders WHERE sender_id = ?";
 		try {
-			return runner.query(SQL, new BeanHandler<Sender>(Sender.class),
-					sender_id);
-		} catch (SQLException e) {
+			return runner.query(SQL, new BeanHandler<Sender>(Sender.class), sender_id);
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -145,7 +146,8 @@ public class SenderDAOImpl implements SenderDAO {
 		String SQL = "SELECT * FROM senders";
 		try {
 			return runner.query(SQL, new BeanListHandler<Sender>(Sender.class));
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -155,9 +157,9 @@ public class SenderDAOImpl implements SenderDAO {
 	public List<Sender> getAllByStatus(int sender_status, int start, int num) {
 		String SQL = "SELECT * FROM senders WHERE sender_status = ? LIMIT ?,?";
 		try {
-			return runner.query(SQL, new BeanListHandler<Sender>(Sender.class),
-					sender_status, start, num);
-		} catch (SQLException e) {
+			return runner.query(SQL, new BeanListHandler<Sender>(Sender.class), sender_status, start, num);
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -168,14 +170,15 @@ public class SenderDAOImpl implements SenderDAO {
 		Sender sender = null;
 		String SQL = "SELECT * FROM senders WHERE sender_phonenumber = ?";
 		try {
-			sender = runner.query(SQL, new BeanHandler<Sender>(Sender.class),
-					sender_phonenumber);
+			sender = runner.query(SQL, new BeanHandler<Sender>(Sender.class), sender_phonenumber);
 			if (sender == null) {
 				return false;
-			} else {
+			}
+			else {
 				return true;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -185,9 +188,9 @@ public class SenderDAOImpl implements SenderDAO {
 	public Sender check(String sender_phonenumber, String password) {
 		String SQL = "SELECT * FROM senders WHERE sender_phonenumber = ? and sender_password =? and sender_status = ?";
 		try {
-			return runner.query(SQL, new BeanHandler<Sender>(Sender.class),
-					sender_phonenumber, password, 1);
-		} catch (SQLException e) {
+			return runner.query(SQL, new BeanHandler<Sender>(Sender.class), sender_phonenumber, password, 1);
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -201,10 +204,12 @@ public class SenderDAOImpl implements SenderDAO {
 			rowEffect = runner.update(SQL, password, sender_id);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -218,10 +223,12 @@ public class SenderDAOImpl implements SenderDAO {
 			rowEffect = runner.update(SQL, speed, sender_id);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -235,10 +242,12 @@ public class SenderDAOImpl implements SenderDAO {
 			rowEffect = runner.update(SQL, get, sum, sender_id);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -248,8 +257,9 @@ public class SenderDAOImpl implements SenderDAO {
 	public long getCount(int status) {
 		String SQL = "SELECT COUNT('sender_id') FROM senders WHERE sender_status =?";
 		try {
-			return runner.query(SQL, new ScalarHandler<Long>(),status);
-		} catch (SQLException e) {
+			return runner.query(SQL, new ScalarHandler<Long>(), status);
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return 0L;
@@ -263,10 +273,12 @@ public class SenderDAOImpl implements SenderDAO {
 			rowEffect = runner.update(SQL, status, sender_id);
 			if (rowEffect > 0) {
 				return true;
-			} else {
+			}
+			else {
 				return false;
 			}
-		} catch (SQLException e) {
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return false;
